@@ -1,0 +1,9 @@
+﻿<Window x:Class="CustomControls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:ControlsLibrary"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Controls:MyLabel Content=" My Custom Label, So Fuck Off" Background="RosyBrown"/>
+    </Grid>
+</Window>

@@ -1,0 +1,82 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ControlsLibrary">
+
+
+    <Style TargetType="{x:Type local:MyButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:MyButton}">
+                    <Grid>
+                        <Border CornerRadius="20" >
+                            <Grid>
+                                <Button/>
+                                <Path Data="M104,43 C75,101 69.5,161.5 136.5,104.5 203.5,47.5 111.50003,34.500045 156.49998,28.500077 201.49992,22.500108 303.49857,-8.4997281 227.49908,39.500018" Fill="#FFF4F4F5" HorizontalAlignment="Stretch" Margin="8,8,117.705,8" Stretch="Fill" Stroke="Black" Width="Auto"/>
+                                <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="137.82,96.863,44.256,11.544" Content="{TemplateBinding Content}" >
+                                    <ContentPresenter.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="-30.617"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </ContentPresenter.RenderTransform>
+                                </ContentPresenter>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:MyLabel}">
+        <Setter Property="FlowDirection" Value="LeftToRight" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="Cambria"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:MyLabel">
+                    <Border BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" >
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}" Opacity="0.5" />
+                            <Grid x:Name="GridHorizontal" Visibility="Visible">
+                                <TextBlock x:Name="LbEnglish" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{TemplateBinding Content}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}" Padding="{TemplateBinding Padding}" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" />
+                                <TextBlock x:Name="LbArabic" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="{TemplateBinding Padding}" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"
+                               Text="{Binding ContentArabic,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:MyLabel}}}"
+                               FontFamily="{Binding FontFamilyArabic,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:MyLabel}}}" 
+                               FontSize="{Binding FontSizeArabic,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:MyLabel}}}"
+                               FontWeight="{Binding FontWeightArabic,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:MyLabel}}}" />
+                            </Grid>
+                            <Grid x:Name="GridVertical" Visibility="Hidden">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="LbEnglishV" Grid.Row="1" Padding="0" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Top" HorizontalAlignment="Center" Text="{TemplateBinding Content}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" />
+                                <TextBlock x:Name="LbArabicV" Padding="0" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Bottom" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"
+                               Text="{Binding ContentArabic,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:MyLabel}}}"
+                               FontFamily="{Binding FontFamilyArabic,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:MyLabel}}}" 
+                               FontSize="{Binding FontSizeArabic,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:MyLabel}}}"
+                               FontWeight="{Binding FontWeightArabic,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:MyLabel}}}" />
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="DimGray"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>
